@@ -6,37 +6,39 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CatManagerDelegate {
     func didUpdateCat(_ catManager: CatManager, cat: [CatData])
 }
 
-struct CatManager {
+protocol CatManagerImageDelegate {
+    func didLoadImage(_ catManager: CatManager, image: UIImage)
+}
+
+class CatManager: UIImage {
     
     var delegate: CatManagerDelegate?
+    var imageDelegate: CatManagerImageDelegate?
     
     let url = "https://api.thecatapi.com/v1/breeds"
     let api = "85b4afec-3908-40ae-a865-e477fcf358d2"
     
-    func performRequest () {
-        if let url = URL (string: url) {
-            let session = URLSession(configuration: .default)
-            print("Created session succesfully")
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print("Error while creating session: \(error)")
-                    return
-                }
-                if let safeData = data {
-                    if let cat = self.parseJSON(safeData) {
-                        print("successfully finished encoding")
-                        print("Total cats encoded: \(cat.count)")
-                        delegate?.didUpdateCat(self, cat: cat)
-                    }
-                }
+    func performRequest() {
+        guard let url = URL(string: url) else { return }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                print("Error while creating session: \(error.debugDescription)")
+                return
             }
-            task.resume()
+            guard let safeData = data, let cat = self.parseJSON(safeData) else { return }
+            print("successfully finished encoding")
+            print("Total cats encoded: \(cat.count)")
+            self.delegate?.didUpdateCat(self, cat: cat)
+                
         }
+        task.resume()
     }
     
     func parseJSON(_ catData: Data) -> [CatData]? {
@@ -51,5 +53,13 @@ struct CatManager {
         }
     }
     
-    
+    func loadImages(_ url: String) {
+        
+        let catUrl = URL(string: url)
+        if let data = try? Data(contentsOf: catUrl!) {
+            if let loadedImage = UIImage(data: data) {
+                self.imageDelegate?.didLoadImage(self, image: loadedImage)
+            }
+        }
+    }
 }

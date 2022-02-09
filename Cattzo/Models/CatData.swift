@@ -41,9 +41,17 @@ struct CatData: Codable {
     var stranger_friendly: Int?
     var vocalisation: Int?
     var description: String?
+    var image: Image?
 }
 
 struct WeightType: Codable {
     var imperial: String?
     var metric: String?
+}
+
+struct Image: Codable {
+    var id: String?
+    var width: Int?
+    var height: Int?
+    var url: String?
 }

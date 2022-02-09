@@ -14,7 +14,17 @@ class ListViewController: UIViewController, CatManagerDelegate {
     @IBOutlet weak var loadingBackground: UIView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    var allCatsArray: [CatData] = []
+    var allCatsArray: [CatData] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.loadingBackground.isHidden = true
+                self.loadingIndicator.isHidden = true
+                self.tableView.reloadData()
+                print("Table View has been updated")
+            }
+        }
+    }
+    
     var catManager = CatManager()
     
     override func viewDidLoad() {
@@ -31,18 +41,9 @@ class ListViewController: UIViewController, CatManagerDelegate {
         print("When view is loaded: \(allCatsArray.count)")
     }
     
-    func loadData() {
-        DispatchQueue.main.async {
-            self.loadingBackground.isHidden = true
-            self.loadingIndicator.isHidden = true
-            self.tableView.reloadData()
-            print("Table View has been updated")
-        }
-    }
     
     func didUpdateCat(_ catManager: CatManager, cat: [CatData]) {
         allCatsArray = cat
-        loadData()
     }
 
 }
@@ -61,6 +62,8 @@ extension ListViewController: UITableViewDataSource {
         print("Created cellForRowAt")
         return cell
     }
+    
+    
 }
 
 //MARK: - UITableViewDelegate methods
@@ -72,6 +75,12 @@ extension ListViewController: UITableViewDelegate {
 
         
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destinationVC = segue.destination as! CatViewController
