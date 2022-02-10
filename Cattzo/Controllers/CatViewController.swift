@@ -8,41 +8,45 @@
 import Foundation
 import UIKit
 
-class CatViewController: UIViewController, CatManagerImageDelegate {
-
-    
+class CatViewController: UIViewController, WebManagerImageDelegate {
     
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var catImage: UIImageView!
+    @IBOutlet weak var loadingBackground: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     var catInfo: CatData?
     var image: UIImage?
-    var catManager = CatManager()
+    var webManager = WebManager()
+    var catViewModel = CatViewModel()
     
     override func viewDidLoad() {
-        print("CatViewController was loaded!")
         nameLabel.text = catInfo?.name
         descriptionLabel.text = catInfo?.description
-        catManager.imageDelegate = self
-        loadImage()
+        catImage.image = UIImage(named: "defaultCatImage")
+        webManager.imageDelegate = self
+        
+        DispatchQueue.main.async {
+            if let offlineImage = self.catViewModel.getSavedImage(named: self.catInfo!.id!){
+                self.catImage.image = offlineImage
+            } else {
+                if let image = self.catInfo?.image {
+                    if let url = self.catInfo?.image?.url {
+                        self.webManager.loadImages(url)
+                    }
+                }
+            }
+            self.loadingBackground.isHidden = true
+            self.loadingIndicator.isHidden = true
+        }
+        
         
     }
-    
-    func didLoadImage(_ catManager: CatManager, image: UIImage) {
+    func didLoadImage(_ catManager: WebManager, image: UIImage) {
+        print("didLoadImage delegate called!")
         catImage.image = image
+        self.catViewModel.saveImage(image: image, id: catInfo!.id!)
     }
-    
-    func loadImage() {
-        if let image = catInfo?.image {
-            if let url = catInfo?.image?.url {
-                catManager.loadImages(url)
-            } else {
-                catImage.image = UIImage(named: "defaultCatImage")
-            }
-        } else {
-            catImage.image = UIImage(named: "defaultCatImage")
-        }
-    }
-    
 }

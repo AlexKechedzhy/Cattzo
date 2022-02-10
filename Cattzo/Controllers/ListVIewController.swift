@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, CatManagerDelegate {
+class ListViewController: UIViewController, WebManagerDelegate {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,11 +25,11 @@ class ListViewController: UIViewController, CatManagerDelegate {
         }
     }
     
-    var catManager = CatManager()
+    var catManager = WebManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -42,7 +42,7 @@ class ListViewController: UIViewController, CatManagerDelegate {
     }
     
     
-    func didUpdateCat(_ catManager: CatManager, cat: [CatData]) {
+    func didUpdateCat(_ catManager: WebManager, cat: [CatData]) {
         allCatsArray = cat
     }
 

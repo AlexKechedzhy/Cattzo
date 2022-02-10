@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-protocol CatManagerDelegate {
-    func didUpdateCat(_ catManager: CatManager, cat: [CatData])
+protocol WebManagerDelegate {
+    func didUpdateCat(_ catManager: WebManager, cat: [CatData])
 }
 
-protocol CatManagerImageDelegate {
-    func didLoadImage(_ catManager: CatManager, image: UIImage)
+protocol WebManagerImageDelegate {
+    func didLoadImage(_ catManager: WebManager, image: UIImage)
 }
 
-class CatManager: UIImage {
+class WebManager: UIImage {
     
-    var delegate: CatManagerDelegate?
-    var imageDelegate: CatManagerImageDelegate?
+    var delegate: WebManagerDelegate?
+    var imageDelegate: WebManagerImageDelegate?
     
     let url = "https://api.thecatapi.com/v1/breeds"
     let api = "85b4afec-3908-40ae-a865-e477fcf358d2"
@@ -54,10 +54,11 @@ class CatManager: UIImage {
     }
     
     func loadImages(_ url: String) {
-        
+        print("loadImages function called!")
         let catUrl = URL(string: url)
         if let data = try? Data(contentsOf: catUrl!) {
             if let loadedImage = UIImage(data: data) {
+                print("loading Cat image...")
                 self.imageDelegate?.didLoadImage(self, image: loadedImage)
             }
         }
