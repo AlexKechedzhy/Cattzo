@@ -17,7 +17,10 @@
 		34A0190E27B28C2A00969A17 /* CatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0190D27B28C2A00969A17 /* CatData.swift */; };
 		34A0191427B2C15800969A17 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0191327B2C15800969A17 /* CatViewController.swift */; };
 		34A0191827B5514400969A17 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0191727B5514400969A17 /* CatViewModel.swift */; };
-		34A0191A27B56AF600969A17 /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0191927B56AF600969A17 /* ListViewCell.xib */; };
+		34A0194327B5A0F800969A17 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0194127B5A0F800969A17 /* CollectionViewCell.swift */; };
+		34A0194427B5A0F800969A17 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0194227B5A0F800969A17 /* CollectionViewCell.xib */; };
+		34A0194727B6523D00969A17 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0194527B6523D00969A17 /* TableViewCell.swift */; };
+		34A0194827B6523D00969A17 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0194627B6523D00969A17 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,10 @@
 		34A0190D27B28C2A00969A17 /* CatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatData.swift; sourceTree = "<group>"; };
 		34A0191327B2C15800969A17 /* CatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		34A0191727B5514400969A17 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
-		34A0191927B56AF600969A17 /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		34A0194127B5A0F800969A17 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		34A0194227B5A0F800969A17 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		34A0194527B6523D00969A17 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		34A0194627B6523D00969A17 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				34A018F827B2845700969A17 /* Main.storyboard */,
-				34A0191927B56AF600969A17 /* ListViewCell.xib */,
+				34A0194127B5A0F800969A17 /* CollectionViewCell.swift */,
+				34A0194227B5A0F800969A17 /* CollectionViewCell.xib */,
+				34A0194527B6523D00969A17 /* TableViewCell.swift */,
+				34A0194627B6523D00969A17 /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,10 +173,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A0191A27B56AF600969A17 /* ListViewCell.xib in Resources */,
+				34A0194827B6523D00969A17 /* TableViewCell.xib in Resources */,
 				34A018FF27B2845800969A17 /* LaunchScreen.storyboard in Resources */,
 				34A018FC27B2845800969A17 /* Assets.xcassets in Resources */,
 				34A018FA27B2845700969A17 /* Main.storyboard in Resources */,
+				34A0194427B5A0F800969A17 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +190,10 @@
 			files = (
 				34A018F727B2845700969A17 /* ListVIewController.swift in Sources */,
 				34A018F327B2845700969A17 /* AppDelegate.swift in Sources */,
+				34A0194327B5A0F800969A17 /* CollectionViewCell.swift in Sources */,
 				34A0190E27B28C2A00969A17 /* CatData.swift in Sources */,
 				34A0190927B287A600969A17 /* WebManager.swift in Sources */,
+				34A0194727B6523D00969A17 /* TableViewCell.swift in Sources */,
 				34A018F527B2845700969A17 /* SceneDelegate.swift in Sources */,
 				34A0191827B5514400969A17 /* CatViewModel.swift in Sources */,
 				34A0191427B2C15800969A17 /* CatViewController.swift in Sources */,

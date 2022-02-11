@@ -16,25 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0R-vC-Xlk">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0R-vC-Xlk">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CatCell" id="uDf-EV-rnu">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uDf-EV-rnu" id="cci-G8-Zv2">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="diz-GZ-tXF" kind="show" identifier="catSegue" trigger="accessoryAction" id="PTw-xq-c4u"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                <sections/>
                             </tableView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58H-Cq-kN0">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58H-Cq-kN0">
+                                <rect key="frame" x="339" y="-17" width="428" height="926"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="3gt-Ga-ORW">
                                         <rect key="frame" x="0.0" y="363" width="428" height="200"/>
@@ -64,6 +52,7 @@
                         <outlet property="loadingBackground" destination="58H-Cq-kN0" id="vb5-bQ-Xwu"/>
                         <outlet property="loadingIndicator" destination="3gt-Ga-ORW" id="ztm-ea-65d"/>
                         <outlet property="tableView" destination="K0R-vC-Xlk" id="HZu-31-a7J"/>
+                        <segue destination="diz-GZ-tXF" kind="push" identifier="catSegue" id="kkt-El-LeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gZ-eH-dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -97,8 +86,8 @@
                                 <rect key="frame" x="0.0" y="88" width="428" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uvv-Yh-vkd">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uvv-Yh-vkd">
+                                <rect key="frame" x="366" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="95d-oa-Z5r">

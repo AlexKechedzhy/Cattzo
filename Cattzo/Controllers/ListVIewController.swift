@@ -36,6 +36,7 @@ class ListViewController: UIViewController, WebManagerDelegate {
         tableView.rowHeight = 80.0
         catManager.delegate = self
         catManager.performRequest()
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "tableViewCell")
         
         
         print("When view is loaded: \(allCatsArray.count)")
@@ -56,13 +57,23 @@ extension ListViewController: UITableViewDataSource {
         return allCatsArray.count
     }
     
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CatCell", for: indexPath)
+//        cell.textLabel?.text = allCatsArray[indexPath.row].name
+//        print("Created cellForRowAt")
+//        return cell
+//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CatCell", for: indexPath)
-        cell.textLabel?.text = allCatsArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! TableViewCell
+        let info = allCatsArray[indexPath.row]
+        cell.nameLabel.text = info.name
+        cell.originLabel.text = "🇺🇦"
+        cell.lifespanLabel.text = "Lifespan: \(info.life_span!) years"
+        cell.weightLabel.text = "Weight: \(info.weight!.imperial!) kg"
+        
         print("Created cellForRowAt")
         return cell
     }
-    
     
 }
 
@@ -80,6 +91,12 @@ extension ListViewController: UITableViewDelegate {
         //
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+        
+        
+
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
