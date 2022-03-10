@@ -8,6 +8,8 @@
 import Foundation
 
 struct CatData: Codable {
+    
+    
     var id: String?
     var name: String?
     var temperament: String?
@@ -23,6 +25,7 @@ struct CatData: Codable {
     var natural: Int?
     var rare: Int?
     var rex: Int?
+    var indoor: Int?
     var suppressed_tail: Int?
     var short_legs: Int?
     var hypoallergenic: Int?
@@ -42,7 +45,84 @@ struct CatData: Codable {
     var vocalisation: Int?
     var description: String?
     var image: Image?
+    
+    func countPercs() -> Int {
+        var percsNumber = 0
+        if indoor == 1 {
+            percsNumber += 1
+        }
+        if experimental == 1 {
+            percsNumber += 1
+        }
+        if hairless == 1 {
+            percsNumber += 1
+        }
+        if natural == 1 {
+            percsNumber += 1
+        }
+        if rare == 1 {
+            percsNumber += 1
+        }
+        if suppressed_tail == 1 {
+            percsNumber += 1
+        }
+        if short_legs == 1 {
+            percsNumber += 1
+        }
+        if hypoallergenic == 1 {
+            percsNumber += 1
+        }
+        return percsNumber
+    }
+    
+    func getPercsArray() -> [(imageName: String, labelName: String, value: Bool)] {
+        var percArray: [(String, String, Bool)] = []
+        
+        if indoor == 1 {
+            percArray.append(("indoor", "Indoor", true ))
+        }
+        if experimental == 1 {
+            percArray.append(("experimental", "Experimental", true ))
+        }
+        if hairless == 1 {
+            percArray.append(("hairless", "Hairless", true ))
+        }
+        if natural == 1 {
+            percArray.append(("natural", "Natural", true ))
+        }
+        if rare == 1 {
+            percArray.append(("rare", "Rare", true ))
+        }
+        if suppressed_tail == 1 {
+            percArray.append(("supressed_tail", "Supressed tail", true ))
+        }
+        if short_legs == 1 {
+            percArray.append(("short_legs", "Short legs", true ))
+        }
+        if hypoallergenic == 1 {
+            percArray.append(("hypoallergenic", "Hypoallergenic", true ))
+        }
+
+        return percArray
+    }
+    
+    func getParametersArray() -> [(value: Int?, name: String)] {
+        return [(child_friendly, "child friendly"),
+                (dog_friendly, "dog friendly"),
+                (energy_level, "energy level"),
+                (grooming, "grooming"),
+                (health_issues, "health issues"),
+                (intelligence, "intelligence"),
+                (shedding_level, "shedding level"),
+                (social_needs, "social needs"),
+                (stranger_friendly, "stranger friendly"),
+                (vocalisation, "vocalisation"),
+                (adaptability, "adaptability"),
+                (affection_level, "affection level")]
+    }
 }
+
+
 
 struct WeightType: Codable {
     var imperial: String?
@@ -55,3 +135,5 @@ struct Image: Codable {
     var height: Int?
     var url: String?
 }
+
+

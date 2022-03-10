@@ -39,6 +39,4 @@ class CatViewModel: UIImage {
         }
         return nil
     }
-    
-    
 }
