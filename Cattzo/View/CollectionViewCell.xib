@@ -66,7 +66,7 @@
     <resources>
         <image name="hypoallergenic" width="512" height="512"/>
         <namedColor name="TableCellLabels">
-            <color red="1" green="0.92156862745098034" blue="0.78823529411764703" alpha="0.84114583333333337" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.92199999094009399" blue="0.78799998760223389" alpha="0.8410000205039978" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
