@@ -21,6 +21,11 @@
 		34A0194427B5A0F800969A17 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0194227B5A0F800969A17 /* CollectionViewCell.xib */; };
 		34A0194727B6523D00969A17 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0194527B6523D00969A17 /* TableViewCell.swift */; };
 		34A0194827B6523D00969A17 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0194627B6523D00969A17 /* TableViewCell.xib */; };
+		34A0194E27B84ABB00969A17 /* CollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0194D27B84ABB00969A17 /* CollectionViewCellModel.swift */; };
+		34A0195227C5323100969A17 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0195127C5323100969A17 /* Miscellaneous.swift */; };
+		34E9B6B627CCDF6B0030EFF3 /* ParameterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E9B6B427CCDF6B0030EFF3 /* ParameterTableViewCell.xib */; };
+		34E9B6B827CCE5210030EFF3 /* ParameterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9B6B727CCE5210030EFF3 /* ParameterTableViewCell.swift */; };
+		34E9B6BA27CCE6B00030EFF3 /* ParametersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9B6B927CCE6B00030EFF3 /* ParametersTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		34A0194227B5A0F800969A17 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		34A0194527B6523D00969A17 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		34A0194627B6523D00969A17 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		34A0194D27B84ABB00969A17 /* CollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellModel.swift; sourceTree = "<group>"; };
+		34A0195127C5323100969A17 /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
+		34E9B6B427CCDF6B0030EFF3 /* ParameterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterTableViewCell.xib; sourceTree = "<group>"; };
+		34E9B6B727CCE5210030EFF3 /* ParameterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterTableViewCell.swift; sourceTree = "<group>"; };
+		34E9B6B927CCE6B00030EFF3 /* ParametersTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,8 @@
 				34A018F827B2845700969A17 /* Main.storyboard */,
 				34A0194127B5A0F800969A17 /* CollectionViewCell.swift */,
 				34A0194227B5A0F800969A17 /* CollectionViewCell.xib */,
+				34E9B6B727CCE5210030EFF3 /* ParameterTableViewCell.swift */,
+				34E9B6B427CCDF6B0030EFF3 /* ParameterTableViewCell.xib */,
 				34A0194527B6523D00969A17 /* TableViewCell.swift */,
 				34A0194627B6523D00969A17 /* TableViewCell.xib */,
 			);
@@ -110,7 +122,10 @@
 			children = (
 				34A0190827B287A600969A17 /* WebManager.swift */,
 				34A0190D27B28C2A00969A17 /* CatData.swift */,
+				34A0194D27B84ABB00969A17 /* CollectionViewCellModel.swift */,
+				34E9B6B927CCE6B00030EFF3 /* ParametersTableViewModel.swift */,
 				34A0191727B5514400969A17 /* CatViewModel.swift */,
+				34A0195127C5323100969A17 /* Miscellaneous.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +191,7 @@
 				34A0194827B6523D00969A17 /* TableViewCell.xib in Resources */,
 				34A018FF27B2845800969A17 /* LaunchScreen.storyboard in Resources */,
 				34A018FC27B2845800969A17 /* Assets.xcassets in Resources */,
+				34E9B6B627CCDF6B0030EFF3 /* ParameterTableViewCell.xib in Resources */,
 				34A018FA27B2845700969A17 /* Main.storyboard in Resources */,
 				34A0194427B5A0F800969A17 /* CollectionViewCell.xib in Resources */,
 			);
@@ -188,11 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A0195227C5323100969A17 /* Miscellaneous.swift in Sources */,
+				34E9B6BA27CCE6B00030EFF3 /* ParametersTableViewModel.swift in Sources */,
 				34A018F727B2845700969A17 /* ListVIewController.swift in Sources */,
 				34A018F327B2845700969A17 /* AppDelegate.swift in Sources */,
+				34A0194E27B84ABB00969A17 /* CollectionViewCellModel.swift in Sources */,
 				34A0194327B5A0F800969A17 /* CollectionViewCell.swift in Sources */,
 				34A0190E27B28C2A00969A17 /* CatData.swift in Sources */,
 				34A0190927B287A600969A17 /* WebManager.swift in Sources */,
+				34E9B6B827CCE5210030EFF3 /* ParameterTableViewCell.swift in Sources */,
 				34A0194727B6523D00969A17 /* TableViewCell.swift in Sources */,
 				34A018F527B2845700969A17 /* SceneDelegate.swift in Sources */,
 				34A0191827B5514400969A17 /* CatViewModel.swift in Sources */,
@@ -351,6 +371,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -379,6 +400,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
